@@ -1,119 +1,87 @@
 import styled from "styled-components";
 
-export const Hero = styled.section`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  justify-content: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
+export const Filters = styled.div`
   background-color: #202024;
+  height: 120px;
+  padding-top: 5rem;
 
-  .search {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    background-color: #121214;
-    border: 1px solid transparent;
-    color: #fff;
-    border-radius: 8px;
-    width: 500px;
-    padding: 0.25rem 0.5rem;
-    padding-right: 0.75rem;
+  .filters {
+    max-width: 1244px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 
-    input {
-      border: 0;
-      background-color: transparent;
-      outline: 0;
-      color: white;
-      height: 2.5rem;
-      font-size: 1rem;
-      padding: 0 0.5rem;
-      flex: 1;
-    }
-
-    svg {
-      width: 0.875rem;
-      height: 0.875rem;
-    }
-
-    &:focus-within {
-      border-color: red;
+    @media (min-width: 728px) {
+      grid-template-columns: 1fr 300px;
     }
   }
 
-  .search {
+  ul.tags {
+    list-style: none;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 0.25rem;
-    background-color: #121214;
-    border: 1px solid transparent;
-    color: #fff;
-    border-radius: 8px;
-    width: 400px;
-    padding: 0.25rem 0.5rem;
-    padding-right: 0.75rem;
+    max-width: 1200px;
+    margin: 1rem auto 0;
 
-    input {
-      border: 0;
-      background-color: transparent;
-      outline: 0;
+    li {
+      background-color: #2d2d31;
       color: white;
-      height: 2.5rem;
-      font-size: 1rem;
-      padding: 0 0.5rem;
-      flex: 1;
-    }
+      border-radius: 8px;
+      padding: 1rem;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
 
-    svg {
-      width: 0.875rem;
-      height: 0.875rem;
-    }
-
-    &:focus-within {
-      border-color: red;
+      button {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        color: white;
+      }
     }
   }
 `;
 
-export const ServerList = styled.section`
-  padding: 5rem 1rem;
+export const SectionTitle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1244px;
+  margin: 0 auto;
 
-  > header {
+  strong {
+    color: white;
+    font-size: 1.25rem;
+  }
+
+  button {
+    height: 3rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #00b37e;
+    color: #00b37e;
+    padding: 0 2rem;;
+    font-size: 1rem;
+    transition: filter 0.25s;
 
-    strong {
-      color: white;
-      font-size: 1.25rem;
-    }
-
-    button {
-      background-color: transparent;
-      border: 1px solid green;
-      color: green;
-      border-radius: 8px;
-      height: 2rem;
-      padding: 0 1rem;
-      cursor: pointer;
+    &:hover {
+      filter: brightness(0.9);
     }
   }
-
-  .servers {
-    margin-top: 1rem;
-    column-count: 1;
-    column-gap: 1rem;
-
-    @media (min-width: 724px) and (max-width: 1024px) {
-      column-count: 2;
-    }
-
-    @media (min-width: 1024px) {
-      column-count: 3;
-    }
-
-    > div {
-      margin-bottom: 1rem;
-    }
-  }
+`;
+export const Content = styled.section`
+  margin-top: 2rem;
 `;

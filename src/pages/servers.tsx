@@ -1,31 +1,41 @@
-"use client"
-import { MagnifyingGlass, CheckSquare } from "phosphor-react";
+"use client";
+import { XCircle } from "phosphor-react";
 
+import { Search } from "@/components/Search";
+import { Header } from "@/components/Header";
+import { ServerList } from "@/components/ServerList";
 
-import { Hero, ServerList } from "@/styles/Servers";
+import { Content, Filters, SectionTitle } from "@/styles/Servers";
 
 export default function Servers() {
   return (
     <>
-      <Hero>
-        <div className="search">
-          <input placeholder="Busque servidores" />
-          <MagnifyingGlass />
+      <Header />
+
+      <Filters>
+        <div className="filters">
+          <Search />
+          <Search />
         </div>
 
-        <div className="search">
-          <input placeholder="Busque servidores" />
-          <CheckSquare />
-        </div>
-      </Hero>
+        <ul className="tags">
+          <li>
+            Comunidade
+            <button>
+              <XCircle />
+            </button>
+          </li>
+        </ul>
+      </Filters>
 
-      <ServerList>
-        <header>
-          <strong>Comunidades populares</strong>
-        </header>
-
-        <div className="servers"></div>
-      </ServerList>
+      <Content>
+        <ServerList type="server" count={12}>
+          <SectionTitle>
+            <strong>Comunidades populares</strong>
+            <button>Hllo</button>
+          </SectionTitle>
+        </ServerList>
+      </Content>
     </>
   );
 }

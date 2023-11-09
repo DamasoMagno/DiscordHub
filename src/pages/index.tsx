@@ -1,24 +1,23 @@
 "use client";
 import Link from "next/link";
-import { MagnifyingGlass } from "phosphor-react";
 
-import { Header } from "@/components/Header";
 import { Server } from "@/components/Server";
+import { Search } from "@/components/Search";
 
 import { Hero, PopularServersList, PopularReviewsList } from "@/styles/Home";
+import { Header } from "@/components/Header";
 
 const popularTags = ["Comunidade", "Jogos", "Amizade", "Programação"];
 
 export default function Home() {
   return (
     <>
+      <Header />
+
       <Hero>
         <h1>DiscordHub, aqui você encontra a comunidade perfeita para ti.</h1>
 
-        <div className="search">
-          <input placeholder="Busque servidores" />
-          <MagnifyingGlass />
-        </div>
+        <Search placeholder="Buscar servidores" />
 
         <div className="tags">
           <strong>Tags populares</strong>
@@ -43,7 +42,7 @@ export default function Home() {
           <Server.Root>
             <Server.Header
               serverName="Star Suco"
-              tags={["Comunidade"]}
+              tags={["Comunidade", "Animes", "Conversa", "Amizade", "1", "2"]}
               starCount={3}
               online={3}
             />
@@ -66,7 +65,7 @@ export default function Home() {
 
       <PopularReviewsList>
         <div className="header">
-          <strong>Comunidades populares</strong>
+          <strong>Reviews populares</strong>
           <button>Ver reviews</button>
         </div>
 
@@ -74,7 +73,7 @@ export default function Home() {
           <Server.Root>
             <Server.Header
               serverName="Star Suco"
-              tags={["Comunidade"]}
+              tags={["Comunidade", "Jogos"]}
               starCount={3}
               online={3}
             />

@@ -4,6 +4,7 @@ export const Container = styled.div`
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9999;
 
   .content {
     display: flex;
@@ -27,8 +28,12 @@ export const Container = styled.div`
       gap: 1rem;
 
       nav {
-        display: flex;
+        display: none;
         gap: 1rem;
+
+        @media (min-width: 728px){
+          display: flex;
+        }
 
         a {
           text-decoration: none;

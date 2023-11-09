@@ -11,6 +11,15 @@ interface HeaderProps {
 }
 
 export function Header({ online, serverName, tags, starCount }: HeaderProps) {
+  let formattTags = [...tags];
+
+  if(tags.length > 3) {
+    const tagsRestant = tags.slice(3).length
+  
+    formattTags = tags.slice(0, tagsRestant)
+    formattTags.push('+' + tagsRestant)
+  }
+
   return (
     <Container>
       <Image
@@ -56,7 +65,7 @@ export function Header({ online, serverName, tags, starCount }: HeaderProps) {
       </div>
 
       <ul className="tags">
-        {tags.map((tag) => (
+        {formattTags.map((tag) => (
           <li key={tag}>{tag}</li>
         ))}
       </ul>

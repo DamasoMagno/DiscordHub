@@ -15,46 +15,11 @@ export const Hero = styled.section`
     line-height: 1.7;
     max-width: 500px;
     text-align: center;
-  }
-
-  .search {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    margin-top: 2rem;
-    background-color: #121214;
-    border: 1px solid transparent;
-    color: #fff;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 90%;
-    padding: 0.25rem 0.5rem;
-    padding-right: 0.75rem;
-    transition: border-color .25s;
-
-    input {
-      border: 0;
-      background-color: transparent;
-      outline: 0;
-      color: white;
-      height: 2.5rem;
-      font-size: 1rem;
-      padding: 0 0.5rem;
-      flex: 1;
-    }
-
-    svg {
-      width: 0.875rem;
-      height: 0.875rem;
-    }
-
-    &:focus-within {
-      border-color: #00b37e;
-    }
+    margin-bottom: 2rem;
   }
 
   .tags {
-    margin-top: 1.5rem;
+    margin-top: 3rem;
     max-width: 500px;
     text-align: center;
 
