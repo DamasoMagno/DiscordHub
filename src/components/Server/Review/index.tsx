@@ -1,4 +1,4 @@
-import { Star, Hand } from "phosphor-react";
+import { Star, Hand, ThumbsDown, ThumbsUp } from "phosphor-react";
 
 import { Container } from "./styles";
 
@@ -27,10 +27,10 @@ export function Review({ title, description, starCount }: ReviewProps) {
 
       <div className="actions">
         <button>
-          <Hand size={20} />
+          <ThumbsUp size={20} color="#ffffff" />
         </button>
         <button>
-          <Hand size={20} />
+          <ThumbsDown size={20} color="#FFF" />
         </button>
       </div>
     </Container>

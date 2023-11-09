@@ -1,25 +1,17 @@
+import { ReactNode } from "react";
 import { Server } from "../Server";
 import { Container } from "./styles";
 
 interface ServerListProps {
-  title: string;
-  navigation: string;
+  children: ReactNode;
   count: number;
   type: "server" | "review";
 }
 
-export function ServerList({
-  count,
-  navigation,
-  title,
-  type,
-}: ServerListProps) {
+export function ServerList({ count, children, type }: ServerListProps) {
   return (
     <Container>
-      <header>
-        <strong>{title}</strong>
-        <button>{navigation}</button>
-      </header>
+      {children}
 
       <div className="servers">
         {Array.from({ length: count }).map((_, index) => (

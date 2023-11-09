@@ -1,15 +1,12 @@
+"use client"
 import { MagnifyingGlass, CheckSquare } from "phosphor-react";
 
-import { Header } from "@/components/Header";
 
 import { Hero, ServerList } from "@/styles/Servers";
-import { Server } from "@/components/Server";
 
 export default function Servers() {
   return (
     <>
-      <Header />
-
       <Hero>
         <div className="search">
           <input placeholder="Busque servidores" />

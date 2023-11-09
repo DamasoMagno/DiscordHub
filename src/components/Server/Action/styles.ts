@@ -22,6 +22,11 @@ export const Container = styled.button<ContainerProps>`
     filter: brightness(.9);
   }
 
+  &:last-child {
+    padding: 0 3rem;
+    flex: 1;
+  }
+
   ${(props) => {
     switch (props.variant) {
       case "ghost":

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Star } from "phosphor-react";
+import { Star, DiscordLogo } from "phosphor-react";
 
 import { Container } from "./styles";
 
@@ -41,15 +41,17 @@ export function Header({ online, serverName, tags, starCount }: HeaderProps) {
             ))}
           </ul>
 
-          {online && (
-            <span>
-              <div /> {online}
-            </span>
-          )}
+          <div>
+            {online && (
+              <span>
+                <div /> {online}
+              </span>
+            )}
 
-          <span>
-            <div />
-          </span>
+            <span>
+              <DiscordLogo size={20} />
+            </span>
+          </div>
         </div>
       </div>
 

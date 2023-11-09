@@ -38,7 +38,7 @@ export const Container = styled.div`
     justify-content: flex-end;
 
     button {
-      border-radius: 0.125rem;
+      border-radius: 4px;
       background: #2d2d31;
       display: flex;
       align-items: center;

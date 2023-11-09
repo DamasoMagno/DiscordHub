@@ -1,34 +1,17 @@
+"use client";
 import Link from "next/link";
 import { MagnifyingGlass } from "phosphor-react";
-import { Server } from "../components/Server";
 
-import { Hero, MainServers } from "@/styles/Home";
 import { Header } from "@/components/Header";
+import { Server } from "@/components/Server";
 
-const serverInfo = {
-  name: "Star Suco",
-  description:
-    "Lorem ipsum dolor sit amet consectetur. Feugiat risus sed mattis libero tempus. Id bibendum tincidunt semper sed accumsan lectus. Duis elit vulputate egestas sapien non eu",
-  tags: ["Comunidade", "Brasil"],
-  onlineMembers: 3,
-  starReview: 3,
-};
+import { Hero, PopularServersList, PopularReviewsList } from "@/styles/Home";
 
-const serverReview = {
-  name: "Star Suco",
-  tags: ["Comunidade", "Brasil"],
-  onlineMembers: 3,
-  userCommentTitle: "Estou amando este servidor!!",
-  userComment:
-    "Lorem ipsum dolor sit amet consectetur. Feugiat risus sed mattis libero tempus.",
-  userReview: 3,
-};
+const popularTags = ["Comunidade", "Jogos", "Amizade", "Programação"];
 
 export default function Home() {
   return (
     <>
-      <Header />
-
       <Hero>
         <h1>DiscordHub, aqui você encontra a comunidade perfeita para ti.</h1>
 
@@ -38,115 +21,79 @@ export default function Home() {
         </div>
 
         <div className="tags">
-          <span>Tags populares</span>
+          <strong>Tags populares</strong>
 
           <ul>
-            <li>
-              <Link href="/">comunidade</Link>
-            </li>
+            {popularTags.map((tag) => (
+              <li key={tag}>
+                <Link href="/">{tag}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </Hero>
 
-      <MainServers>
-        <Server.Root>
-          <Server.Header
-            serverName={serverInfo.name}
-            tags={serverInfo.tags}
-            starCount={serverInfo.starReview}
-            online={serverInfo.onlineMembers}
-          />
-          <Server.Description content={serverInfo.description} />
-          <Server.Actions>
-            <Server.Action>Entrar na comnidade</Server.Action>
-            <Server.Action variant="ghost">Detalhes</Server.Action>
-          </Server.Actions>
-        </Server.Root>
-        <Server.Root>
-          <Server.Header
-            serverName={serverInfo.name}
-            tags={serverInfo.tags}
-            starCount={serverInfo.starReview}
-            online={serverInfo.onlineMembers}
-          />
-          <Server.Description content={serverInfo.description} />
-          <Server.Actions>
-            <Server.Action>Entrar na comnidade</Server.Action>
-            <Server.Action variant="ghost">Detalhes</Server.Action>
-          </Server.Actions>
-        </Server.Root>
-        <Server.Root>
-          <Server.Header
-            serverName={serverInfo.name}
-            tags={serverInfo.tags}
-            starCount={serverInfo.starReview}
-            online={serverInfo.onlineMembers}
-          />
-          <Server.Description content={serverInfo.description} />
-          <Server.Actions>
-            <Server.Action>Entrar na comnidade</Server.Action>
-            <Server.Action variant="ghost">Detalhes</Server.Action>
-          </Server.Actions>
-        </Server.Root>
+      <PopularServersList>
+        <div className="header">
+          <strong>Comunidades populares</strong>
+          <button>Ver comunidades</button>
+        </div>
 
-        <Server.Root>
-          <Server.Header
-            serverName={serverInfo.name}
-            tags={serverInfo.tags}
-            starCount={serverInfo.starReview}
-            online={serverInfo.onlineMembers}
-          />
-          <Server.Description content={serverInfo.description} />
-          <Server.Actions>
-            <Server.Action>Entrar na comnidade</Server.Action>
-            <Server.Action variant="ghost">Detalhes</Server.Action>
-          </Server.Actions>
-        </Server.Root>
-        <Server.Root>
-          <Server.Header
-            serverName={serverInfo.name}
-            tags={serverInfo.tags}
-            starCount={serverInfo.starReview}
-            online={serverInfo.onlineMembers}
-          />
-          <Server.Description content={serverInfo.description} />
-          <Server.Actions>
-            <Server.Action>Entrar na comnidade</Server.Action>
-            <Server.Action variant="ghost">Detalhes</Server.Action>
-          </Server.Actions>
-        </Server.Root>
-        <Server.Root>
-          <Server.Header
-            serverName={serverInfo.name}
-            tags={serverInfo.tags}
-            starCount={serverInfo.starReview}
-            online={serverInfo.onlineMembers}
-          />
-          <Server.Description content={serverInfo.description} />
-          <Server.Actions>
-            <Server.Action>Entrar na comnidade</Server.Action>
-            <Server.Action variant="ghost">Detalhes</Server.Action>
-          </Server.Actions>
-        </Server.Root>
-      </MainServers>
+        <div className="servers">
+          <Server.Root>
+            <Server.Header
+              serverName="Star Suco"
+              tags={["Comunidade"]}
+              starCount={3}
+              online={3}
+            />
 
-      <MainServers>
-        <Server.Root>
-          <Server.Header
-            serverName={serverReview.name}
-            tags={serverReview.tags}
-            online={serverReview.onlineMembers}
-          />
-          <Server.Review
-            title={serverReview.userCommentTitle}
-            description={serverReview.userComment}
-          />
-          <Server.Actions>
-            <Server.Action>Entrar na comnidade</Server.Action>
-            <Server.Action variant="ghost">Detalhes</Server.Action>
-          </Server.Actions>
-        </Server.Root>
-      </MainServers>
+            <Server.Description
+              content="
+                  Lorem ipsum dolor sit amet consectetur. Feugiat risus sed
+                  mattis libero tempus. Id bibendum tincidunt semper sed
+                  accumsan lectus. Duis elit vulputate egestas sapien non eu
+                  vitae laoreet eu. Ac feugiat commodo purus auctor sit
+                "
+            />
+            <Server.Actions>
+              <Server.Action>Entrar na comnidade</Server.Action>
+              <Server.Action variant="ghost">Detalhes</Server.Action>
+            </Server.Actions>
+          </Server.Root>
+        </div>
+      </PopularServersList>
+
+      <PopularReviewsList>
+        <div className="header">
+          <strong>Comunidades populares</strong>
+          <button>Ver reviews</button>
+        </div>
+
+        <div className="servers">
+          <Server.Root>
+            <Server.Header
+              serverName="Star Suco"
+              tags={["Comunidade"]}
+              starCount={3}
+              online={3}
+            />
+            <Server.Review
+              title="Muito bom!"
+              description="
+                  Lorem ipsum dolor sit amet consectetur. Feugiat risus sed
+                  mattis libero tempus. Id bibendum tincidunt semper sed
+                  accumsan lectus. Duis elit vulputate egestas sapien non eu
+                  vitae laoreet eu. Ac feugiat commodo purus auctor sit
+                "
+            />
+            <Server.Actions>
+              <Server.Action>Entrar na comnidade</Server.Action>
+              <Server.Action variant="ghost">Detalhes</Server.Action>
+            </Server.Actions>
+          </Server.Root>
+        </div>
+      </PopularReviewsList>
     </>
   );
 }

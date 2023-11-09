@@ -11,4 +11,13 @@ export default createGlobalStyle`
     background-color: #121214;
     font-family: 'Roboto', sans-serif;
   }
+
+  button {
+    cursor: pointer;
+    transition: filter .25s;
+
+    &:hover {
+      filter: brightness(.8);
+    }
+  }
 `

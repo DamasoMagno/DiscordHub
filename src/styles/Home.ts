@@ -5,7 +5,6 @@ export const Hero = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
 
   color: white;
   padding: 9rem 0;
@@ -27,9 +26,11 @@ export const Hero = styled.section`
     border: 1px solid transparent;
     color: #fff;
     border-radius: 8px;
-    width: 500px;
+    max-width: 500px;
+    width: 90%;
     padding: 0.25rem 0.5rem;
     padding-right: 0.75rem;
+    transition: border-color .25s;
 
     input {
       border: 0;
@@ -48,22 +49,22 @@ export const Hero = styled.section`
     }
 
     &:focus-within {
-      border-color: red;
+      border-color: #00b37e;
     }
   }
 
   .tags {
     margin-top: 1.5rem;
-    width: 500px;
+    max-width: 500px;
     text-align: center;
 
-    span {
-      font-size: 0.875rem;
+    strong {
+      font-size: 1rem;
       font-weight: 500;
     }
 
     ul {
-      margin-top: 0.75rem;
+      margin-top: 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -73,9 +74,9 @@ export const Hero = styled.section`
 
       li {
         background-color: #121214;
-        padding: 0.25rem 0.5rem;
+        padding: 0.5rem 1rem;
         border-radius: 8px;
-        font-size: 1rem;
+        font-size: .875rem;
 
         a {
           text-decoration: none;
@@ -86,18 +87,55 @@ export const Hero = styled.section`
   }
 `;
 
-export const MainServers = styled.section`
-  max-width: 1244px;
-  margin: 1rem auto 0;
+export const ServersListBase = styled.section`
+  padding: 5rem 1rem;
 
-  column-count: 1;
-  column-gap: 1rem;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  @media (min-width: 724px) and (max-width: 1024px) {
-    column-count: 2;
+    max-width: 1244px;
+    margin: 0 auto 1.5rem;
+
+    strong {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    button {
+      background-color: transparent;
+      border: 1px solid #00b37e;
+      color: #00b37e;
+      border-radius: 8px;
+      height: 3rem;
+      padding: 0 1rem;
+    }
   }
 
-  @media (min-width: 1024px) {
-    column-count: 3;
+  .servers {
+    max-width: 1244px;
+    margin: 1rem auto 0;
+
+    column-count: 1;
+    column-gap: 1rem;
+
+    @media (min-width: 724px) and (max-width: 1024px) {
+      column-count: 2;
+    }
+
+    @media (min-width: 1024px) {
+      column-count: 3;
+    }
+
+    > div {
+      margin-bottom: 1rem;
+    }
   }
+`;
+
+export const PopularServersList = styled(ServersListBase)``;
+
+export const PopularReviewsList = styled(ServersListBase)`
+  background-color: rgba(32, 32, 36, 0.5);
 `;
